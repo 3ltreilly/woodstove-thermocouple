@@ -1,0 +1,28 @@
+{
+  "upload": {
+    "port": "/dev/tty.usbserial-1A1340",
+    "baud": 115200
+  },
+  "serial": {
+    "port": "/dev/tty.usbserial-1A1340",
+    "baud": 115200
+  },
+  "ignore": {
+    "extensions": [
+      ".micropythonrc",
+      "blink_led.py",
+      ".DS_Store",
+      ".vscode/"
+
+    ],
+    "directories": [
+      ".vscode/",
+      ".vscode/",
+      "*/.vscode/*"
+    ]
+  },
+  "tools": {
+    "ampy": "/usr/local/bin/ampy",
+    "rshell": "/usr/local/bin/rshell"
+  }
+}

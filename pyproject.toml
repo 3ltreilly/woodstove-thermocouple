@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "dht22_temp_humid_sensor"
+version = "0.1.0"
+description = "Micropython script to average data from sensors"
+authors = ["Bernie Reilly <reilly_bernie@mac.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+adafruit-ampy = "^1.1.0"
+esptool = "^3.2"
+matplotlib = "^3.5.1"
+pandas = "^1.3.5"
+mpremote = "^0.1.0"
+
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+flake8 = "^4.0.1"
+pytest = "^7.0.1"
+pytest-cov = "^3.0.0"
+isort = "^5.10.1"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

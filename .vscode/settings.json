@@ -1,0 +1,15 @@
+{
+    "python.formatting.provider": "black",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "cSpell.ignoreWords": [
+        "aved",
+        "umqttsimple"
+    ],
+    "files.associations": {
+        "*.yaml": "home-assistant"
+    }
+}

@@ -1,0 +1,23 @@
+esptool.py --port /dev/tty.usbserial-1A1340 --baud 115200 write_flash --verify --flash_size=4MB -fm dout 0 esp8266-20200911-v1.13.bin
+
+this one worked before
+esptool.py --port /dev/tty.usbserial-1A1340 erase_flash
+esptool.py --port /dev/tty.usbserial-1A1340 --baud 460800 write_flash --flash_size=detect 0 /Users/mega_man/Documents/Arduino/micro_python/esp8266-20200911-v1.13.bin
+
+to connect with a prompt
+screen /dev/tty.usbserial-1A1340 115200
+
+ampy
+ampy --port /dev/tty.usbserial-1A1340 ls
+
+ampy --port /dev/tty.usbserial-1A1340 put ~/Documents/Arduino/micro_python/thermocouple/b*.py
+ampy --port /dev/tty.usbserial-1A1340 put ~/Documents/Arduino/micro_python/thermocouple/m*.py
+ampy --port /dev/tty.usbserial-1A1340 put ~/Documents/Arduino/micro_python/thermocouple/u*.py
+
+
+thermocouple Pins
+pins on MAX - Pin on 8266
+do - d6
+cs - d8
+clk - d5
+

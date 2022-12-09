@@ -1,0 +1,68 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "list files",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/ampy",
+            "args": [
+                "--port",
+                "/dev/tty.usbserial-*",
+                "ls"
+            ],
+        },
+        {
+            "label": "connect to esp",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/mpremote",
+            "args": [
+                "connect",
+                "/dev/tty.usbserial-*"
+            ],
+        },
+        {
+            "label": "upload main",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/ampy",
+            "args": [
+                "--port",
+                "/dev/tty.usbserial-*",
+                "put",
+                "${workspaceFolder}/dht22_temp_humid_sensor/main.py",
+            ],
+        },
+        {
+            "label": "upload boot",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/ampy",
+            "args": [
+                "--port",
+                "/dev/tty.usbserial-*",
+                "put",
+                "${workspaceFolder}/dht22_temp_humid_sensor/boot.py",
+            ],
+        },
+        {
+            "label": "upload utilities",
+            "type": "shell",
+            "command": "${workspaceFolder}/.venv/bin/ampy",
+            "args": [
+                "--port",
+                "/dev/tty.usbserial-*",
+                "put",
+                "${workspaceFolder}/dht22_temp_humid_sensor/utilities.py"
+            ],
+        },
+        {
+            "label": "upload files",
+            "dependsOn": [
+                "upload main",
+                "upload boot",
+                "upload utilities"
+            ],
+            "dependsOrder": "sequence",
+        }
+    ]
+}
