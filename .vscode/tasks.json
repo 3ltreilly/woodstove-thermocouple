@@ -30,7 +30,7 @@
                 "--port",
                 "/dev/tty.usbserial-*",
                 "put",
-                "${workspaceFolder}/dht22_temp_humid_sensor/main.py",
+                "${workspaceFolder}/thermocouple/main.py",
             ],
         },
         {
@@ -41,18 +41,18 @@
                 "--port",
                 "/dev/tty.usbserial-*",
                 "put",
-                "${workspaceFolder}/dht22_temp_humid_sensor/boot.py",
+                "${workspaceFolder}/thermocouple/boot.py",
             ],
         },
         {
-            "label": "upload utilities",
+            "label": "upload umqttsimple",
             "type": "shell",
             "command": "${workspaceFolder}/.venv/bin/ampy",
             "args": [
                 "--port",
                 "/dev/tty.usbserial-*",
                 "put",
-                "${workspaceFolder}/dht22_temp_humid_sensor/utilities.py"
+                "${workspaceFolder}/thermocouple/umqttsimple.py"
             ],
         },
         {
@@ -60,7 +60,7 @@
             "dependsOn": [
                 "upload main",
                 "upload boot",
-                "upload utilities"
+                "upload umqttsimple"
             ],
             "dependsOrder": "sequence",
         }
