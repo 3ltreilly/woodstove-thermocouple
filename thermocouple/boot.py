@@ -2,12 +2,13 @@
 # # https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
 import time
-from umqttsimple import MQTTClient
-import ubinascii
+
+import esp
 import machine
 import micropython
 import network
-import esp
+import ubinascii
+from umqttsimple import MQTTClient
 
 esp.osdebug(None)
 import gc
@@ -16,7 +17,9 @@ gc.collect()
 
 ssid = "internets"
 password = "reservoir"
-mqtt_server = "192.168.7.32"
+mqtt_server = "192.168.7.160"
+user_name = b"mqtt_user"
+mqtt_password = b"assword"
 # EXAMPLE IP ADDRESS
 # mqtt_server = '192.168.1.144'
 client_id = ubinascii.hexlify(machine.unique_id())
