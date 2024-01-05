@@ -4,8 +4,8 @@
 # https://randomnerdtutorials.com/micropython-mqtt-esp32-esp8266/
 
 # import machine
-from time import sleep
 import math
+from time import sleep
 
 
 def temp_f(data):
@@ -32,9 +32,8 @@ def sub_cb(topic, msg):
         print("ESP received hello message")
 
 
-def connect_and_subscribe():
-    global client_id, mqtt_server, topic_sub
-    client = MQTTClient(client_id, mqtt_server)
+def connect_and_subscribe(client_id, mqtt_server, topic_sub, user_name, mqtt_password):
+    client = MQTTClient(client_id, mqtt_server, user=user_name, password=mqtt_password)
     client.set_callback(sub_cb)
     client.connect()
     client.subscribe(topic_sub)
@@ -58,8 +57,9 @@ data = bytearray(4)
 data2 = bytearray(4)
 
 try:
-    client = connect_and_subscribe()
+    client = connect_and_subscribe(client_id, mqtt_server, topic_sub, user_name, mqtt_password)
 except OSError as e:
+    print(e)
     restart_and_reconnect()
 
 # moving average equation
